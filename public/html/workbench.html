@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>workbench</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/resource/css/bootstrap.min.css">
+	
+	<style type="text/css">
+		
+        .nav > li .dropdown-menu {  
+            margin: 0;  
+        }  
+         .nav > li:hover .dropdown-menu {  
+            display: block;  
+        }  
+        .content{
+        	
+        }
+        .footer{
+        	background: #000;
+        	color: #CCC;
+        	padding: 10px 0;
+        	margin: 20px 0 0;
+        }
+      	.widget_title{
+      		font-size: 16px;
+      		margin: 20px 0;
+      		text-transform: uppercase;
+      		line-height: 22px;
+      		color:#FFF;
+      	}
+      	.app_title{
+      		font-size: 20px;
+      		line-height: 42px;
+      		text-align: left;
+      		font-family: 楷体;
+      	}
+	</style>
+</head>
+<body ng-app="app" ng-controller='appCtl'>
+	<div class="container" style="padding: 20px 0px;">
+		<nav class="row" >
+			<div class="col-md-6" >
+				<div class="col-md-2" >
+					<img ng-src="{{appMsg.logoUrl}}" style="height: 42px;width: 42px; ">	
+				</div>
+				<div class="col-md-8">
+					<p class="app_title">{{appMsg.title}}</p>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<ul class="nav nav-pills">
+				  	<li ng-repeat="ele in menuList" class="dropdown">
+				  		<a ng-show="ele.hasChild" class="dropdown-toggle" data-toggle="dropdown" href="{{ele.url}}">{{ele.menuName}}</a>
+				  		<ul ng-show="ele.hasChild" class="dropdown-menu">
+				  			<li ng-repeat="child in ele.children">
+				  				<a href="{{child.url}}">{{child.menuName}}</a>
+				  			</li>
+				  		</ul>			  			
+			  			<a ng-show="ele.noChild" href="{{ele.url}}">{{ele.menuName}}</a>				  		
+				  	</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<div class="content">
+		<div ng-view ></div>	
+	</div>
+	
+	<div class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<h5 class="widget_title">
+						开发者选择项
+					</h5>
+				</div>
+				<div class="col-md-8">
+					<h5 class="widget_title">关于{{appMsg.title}}</h5>
+					<p>
+						{{appMsg.summary}}
+					</p>
+
+					<h5 class="widget_title">加入我们</h5>
+
+					<p class="col-md-3" style="text-align: center;" ng-repeat="pic in picList">
+						<img ng-src="{{pic.url}}" class="img-responsive" style="margin: 0 auto 10px;" alt="{{pic.name}}">
+						<span>{{pic.name}}</span>
+					</p>
+				</div>
+				<div class="col-md-2">
+					<h5 class="widget_title">
+						789
+					</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="/resource/jquery.js"></script>
+	<script type="text/javascript" src="/resource/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/resource/angular.js"></script>
+	<script type="text/javascript" src="/resource/angualr-router.js"></script>
+	<script type="text/javascript">
+		let app = angular.module('app',['ngRoute']);
+		
+		app.controller('appCtl',($scope)=>{
+			$scope.appMsg = {
+				title:'四川织心青少年发展中心',
+				logoUrl:'/images/logo.jpg',
+				summary:'原名“四川织心志愿者高校联盟”，简称“织心志愿者”，成立于2013年，于2017年初注册成为一家以乡村青少年、乡村中老年人、青年大学生为服务主体的公益机构，总部位于四川省绵阳西南科技大学，品牌项目#四川织心乡村支教夏令营#，自成立以来，服务4000多名山区儿童，服务上万群众，成员500多人，获得9次国家级表彰。宗旨为“促进社会创新、促进社会公平、促进乡村发展、促进青少年成长与发展“，口号为”织结情谊，心合你我。'
+			};
+			
+			$scope.menuList = [			
+				{menuName:'首页',noChild:true,url:'#/'},
+				{menuName:'机构项目',hasChild:true,url:'#',children:[{menuName:'织心*乡村夏令营',url:'#/'},{menuName:'织心*乡村医疗',url:'#/'},{menuName:'织心*乡村创客',url:'#/'},{menuName:'织心*暖冬行动',url:'#/'},{menuName:'织心*留住童年',url:'#/'}]},
+				{menuName:'最新动态',noChild:true,url:'#/news'},
+				{menuName:'合作伙伴',hasChild:true,url:'#/partner',children:[{menuName:'公益合伙人',url:'#/'},{menuName:'合作机构',url:'#/'},{menuName:'合作企业',url:'#/'}]},
+				{menuName:'联系/加入我们',noChild:true,url:'#/contact'}
+			];
+			$scope.picList = [
+				{name:'乡村夏令营',url:'/images/zhixin.bmp'},
+			]
+		})
+		
+		app.config(['$routeProvider', function($routeProvider){
+                $routeProvider
+                .when('/', {
+		            controller : 'mainCtl',		       
+		            templateUrl:'/html/main.html'
+		        })
+		        .when('/news', {
+		            controller : 'newsCtl',		       
+		            templateUrl:'/html/a.html'
+		        })
+		        .when('/partner', {
+		            controller : 'partnerCtl',		       
+		            templateUrl:'/html/a.html'
+		        })
+		        .when('/contact', {
+		            controller : 'contactCtl',		       
+		            templateUrl:'/html/a.html'
+		        })
+                .otherwise({redirectTo:'/'});
+        }]);
+
+		app.controller('mainCtl',  function($scope,$rootScope){
+		    $scope.title = "main Page";	
+		});
+		app.controller('newsCtl', ['$scope', function($scope){
+		    $scope.title = "news Page";
+		}]);
+		app.controller('partnerCtl', ['$scope', function($scope){
+		    $scope.title = "partner Page";
+		}]);
+		app.controller('contactCtl', ['$scope', function($scope){
+		    $scope.title = "contact Page";
+		}]);
+
+	</script>
+</body>
+</html>
