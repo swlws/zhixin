@@ -1,29 +1,42 @@
-<head>
-	<title>main</title>
-	<style type="text/css">
-		.summary{
-			text-align: center;
-		}
-		.summary > h3{
-			font-weight: 300;
-		    font-size: 30px;
-		    line-height: 32px;
-		    color: #444;
-		    font-family: 'MICROSOFT YaHei','Roboto Condensed', sans-serif;
-		    margin: 0 0 15px;
-		}
-		.summary > p{
-			font-family: 'MICROSOFT YaHei','Roboto', sans-serif;
-		    overflow-x: hidden;
-		    color: #666;
-		    font-size: 16px;
-		    font-weight: normal;
-		}
-	</style>
-</head>
-<body>
+
+<title>main</title>
+<style type="text/css">
+	#main .summary{
+		text-align: center;
+	}
+	#main .summary > h3{
+		font-weight: 300;
+	    font-size: 30px;
+	    line-height: 32px;
+	    color: #444;
+	    font-family: 'MICROSOFT YaHei','Roboto Condensed', sans-serif;
+	    margin: 0 0 15px;
+	}
+	#main .summary > p{
+		font-family: 'MICROSOFT YaHei','Roboto', sans-serif;
+	    overflow-x: hidden;
+	    color: #666;
+	    font-size: 16px;
+	    font-weight: normal;
+	}
+	#main .fillWidth{
+		width: 100%;
+		
+	}
+	
+</style>
+
+<div id="main">
 	<div class="container summary">
 		<h3>{{appMsg.title}}</h3>
 		<p>{{appMsg.summary}}</p>
 	</div>
-</body>
+	<div class="container">
+		<h3>机构项目</h3>
+		<div class="col-md-3">
+			<img ng-src="" class="img-responsive" style="margin: 0 auto 10px;">
+			<span>descritpi</span>
+		</div>
+	</div>
+</div>
+
