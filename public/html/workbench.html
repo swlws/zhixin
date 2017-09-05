@@ -20,7 +20,7 @@
         .footer{
         	background: #000;
         	color: #CCC;
-        	padding: 10px 0;
+        	padding: 0 0 10px;
         	margin: 20px 0 0;
         }
       	.widget_title{
@@ -38,8 +38,8 @@
       	}
 	</style>
 </head>
-<body ng-app="app" ng-controller='appCtl'>
-	<div style="position: fixed;top: 0px;margin: 0 auto;width: 100%;background: white;z-index: 999">
+<body ng-app="app" ng-controller='appCtl' style="overflow-x: hidden;">
+	<div id="workbench_header" style="position: fixed;top: 0px;margin: 0 auto;width: 100%;background: white;z-index: 999">
 		<div class="container" style="padding: 20px 0px;">
 			<nav class="row" >
 				<div class="col-md-6" >
@@ -68,11 +68,14 @@
 	</div>
 	
 	
-	<div class="content" style="margin-top:91px; ">
+	<div class="content" style="margin-top:0px;">
 		<div ng-view ></div>	
 	</div>
 	
 	<div class="footer">
+		<div class="row" style="padding: 40px 0px;text-align: center;background: blue;">
+			<h3 ng-click="exportXlsx()" style="cursor: pointer;">导出报表</h3>
+		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2">
@@ -95,7 +98,7 @@
 				</div>
 				<div class="col-md-2">
 					<h5 class="widget_title">
-						789
+						联系我们
 					</h5>
 				</div>
 			</div>
