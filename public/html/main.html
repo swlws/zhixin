@@ -132,10 +132,18 @@
 	.box:hover .icon li:last-child a{
 		transition-delay: 0.8s;
 	}
+
+	.claer:after{
+	    content:' ';
+	    clear:both;
+	    overflow:hidden;
+	    height:0px;
+	    *zoom:1;
+	}
 </style>
 
 <div> 
-	<div class="container" style="width: 100%;overflow: hidden;padding: 0px;">
+	<div class="container" style="width: 100%;padding: 0px;">
 		<img ng-src="{{headerBackground.url}}" style="width: 100%;height: {{headerBackground.height}}px;">
 	</div>
 	<div class="container text_center">
@@ -149,7 +157,7 @@
 		<div class="row">
 			<div class="col-md-3" ng-repeat="pro in projectList" >
 				<div class="thumbnail picBox box" >
-					<a ng-href="{{pro.linkUrl}}"><img  ng-src="{{pro.photoUrl}}" /></a>
+					<a ng-href="{{pro.linkUrl}}"><img ng-src="{{pro.photoUrl}}" /></a>
 					<div class="box-content text_center">
 						<h3 class="title">{{pro.title}}</h3>
 						<span class="post" >点击查看详情</span>
@@ -167,6 +175,25 @@
 		</div>
 	</div>
 	
+	<div class="container" style="width: 100%;padding: 0px;min-height: 600px;">
+		<h3 class="text_center padding_title">
+			<span class="active_title ">&nbsp最新动态&nbsp</span>
+		</h3>
+		<div class="row" style="position: relative;margin: 0px;padding: 0px;">
+			<div class="col-md-3" ng-repeat="pro in projectList" style="margin: 0px;padding: 0px;position: relative;left: 0px;top:0px;">
+				<div class="thumbnail picBox box" >
+					<a ng-href="{{pro.linkUrl}}"><img  ng-src="{{pro.photoUrl}}" /></a>
+					<div class="box-content text_center">
+						<h3 class="title">{{pro.title}}</h3>
+						<span class="post" >点击查看详情</span>
+					</div>					
+				</div>
+			</div>	
+		</div>
+	</div>
+
+
+
 	<div class="container" >
 		<h3 class="text_center padding_title">
 			<span class="active_title ">&nbsp合作伙伴&nbsp</span>
