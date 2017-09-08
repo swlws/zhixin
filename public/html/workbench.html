@@ -44,15 +44,15 @@
 	<div id="workbench_header" style="position: fixed;top: 0px;margin: 0 auto;width: 100%;background: white;z-index: 999">
 		<div class="container" style="padding: 20px 0px;">
 			<nav class="row" >
-				<div class="col-md-6" >
-					<div class="col-md-2" >
+				<div class="col-md-6 col-sm-6 col-xs-6" >
+					<div class="col-md-2 col-sm-2 col-xs-2" >
 						<img ng-src="{{appMsg.logoUrl}}" style="height: 42px;width: 42px; ">	
 					</div>
-					<div class="col-md-8">
+					<div class="col-md-8 col-sm-2 col-xs-2">
 						<p class="app_title">{{appMsg.title}}</p>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-6 col-sm-6 col-xs-6">
 					<ul class="nav nav-pills">
 					  	<li ng-repeat="ele in menuList" class="dropdown">
 					  		<a ng-show="ele.hasChild" class="dropdown-toggle" data-toggle="dropdown" href="{{ele.url}}">{{ele.menuName}}</a>
@@ -80,12 +80,12 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-2">
+				<div class="col-md-2 col-sm-2 col-xs-2">
 					<h5 class="widget_title">
 						开发者选择项
 					</h5>
 				</div>
-				<div class="col-md-8">
+				<div class="col-md-8 col-sm-8 col-xs-8">
 					<h5 class="widget_title">关于{{appMsg.title}}</h5>
 					<p>
 						{{appMsg.summary}}
@@ -93,12 +93,12 @@
 
 					<h5 class="widget_title">加入我们</h5>
 
-					<p class="col-md-3" style="text-align: center;" ng-repeat="pic in picList">
+					<p class="col-md-3 col-sm-3 col-xs-3" style="text-align: center;" ng-repeat="pic in picList">
 						<img ng-src="{{pic.url}}" class="img-responsive" style="margin: 0 auto 10px;" alt="{{pic.name}}">
 						<span>{{pic.name}}</span>
 					</p>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-2 col-sm-2 col-xs-2">
 					<h5 class="widget_title">
 						联系我们
 					</h5>
