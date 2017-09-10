@@ -17,6 +17,8 @@
 	    color: #666;
 	    font-size: 16px;
 	    font-weight: normal;
+	    text-align: left;
+
 	}
 	
 	.active_title{
@@ -25,6 +27,7 @@
 	    line-height: 32px;
 	    color: #444;
 	    font-family: 'kaiti','MICROSOFT YaHei','Roboto Condensed', sans-serif;
+
 	}
 	.active_title::before,.active_title::after{
 		display: inline-block;
@@ -36,7 +39,7 @@
 	    width: 80px;
 	}
 	.padding_title{
-		padding: 30px 0 ;
+		padding: 50px 0 ;
 	}
 	
 	/*****************相册的公共样式*******************/
@@ -208,9 +211,9 @@
 		</div>
 	</div>
 	
-	<div class="container" style="width: 100%;padding: 0px;">
+	<div class="container" style="width: 100%;margin-top:50px;padding: 0 0 50px;;background: #272727;">
 		<h3 class="text_center padding_title">
-			<span class="active_title ">&nbsp最新动态&nbsp</span>
+			<span class="active_title" style="color: white;">&nbsp最新动态&nbsp</span>
 		</h3>
 		<div class="row">
 			<div class="col-md-3 col-sm-3 col-xs-3" ng-repeat="news in newsList" style="margin: 0px;padding: 0px;">

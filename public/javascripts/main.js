@@ -3,6 +3,7 @@ app.controller('mainCtl',  function($scope,$rootScope){
 	let workbench_header = $('#workbench_header').outerHeight(true);
 	$scope.headerBackground = {
 		url:'/images/main/2.png',
+		// url:'/images/back.jpg',
 		height:docHeight
 	}
     $scope.title = "main Page";	
