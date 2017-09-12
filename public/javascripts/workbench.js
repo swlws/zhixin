@@ -1,6 +1,6 @@
 let app = angular.module('app',['ngRoute']);
 
-app.service('exportFile',function(){
+app.service('appTool',function(){
     this.exportXlsx = function(url){
         var url = url || '/1.xls';
         var xhr = new XMLHttpRequest();
@@ -29,9 +29,13 @@ app.service('exportFile',function(){
         // 发送ajax请求
         xhr.send()
     }
+
+    this.toTop = ()=>{
+        $(document).scrollTop(0);
+    }
 })
 
-app.controller('appCtl',($scope,exportFile)=>{
+app.controller('appCtl',($scope,appTool)=>{
 	$scope.appMsg = {
 		title:'四川织心青少年发展中心',
 		logoUrl:'/images/logo.jpg',
@@ -40,15 +44,15 @@ app.controller('appCtl',($scope,exportFile)=>{
 	
 	$scope.menuList = [			
 		{menuName:'首页',noChild:true,url:'#/'},
-		{menuName:'机构项目',hasChild:true,url:'#',children:[{menuName:'织心*乡村夏令营',url:'#/'},{menuName:'织心*乡村医疗',url:'#/'},{menuName:'织心*乡村创客',url:'#/'},{menuName:'织心*暖冬行动',url:'#/'},{menuName:'织心*留住童年',url:'#/'}]},
+		{menuName:'机构项目',hasChild:true,url:'javascript:viod(0)',children:[{menuName:'织心*乡村夏令营',url:'#/'},{menuName:'织心*乡村医疗',url:'#/'},{menuName:'织心*乡村创客',url:'#/'},{menuName:'织心*暖冬行动',url:'#/'},{menuName:'织心*留住童年',url:'#/'}]},
 		{menuName:'最新动态',noChild:true,url:'#/news'},
-		{menuName:'合作伙伴',hasChild:true,url:'#/partner',children:[{menuName:'公益合伙人',url:'#/'},{menuName:'合作机构',url:'#/'},{menuName:'合作企业',url:'#/'}]},
+		{menuName:'合作伙伴',hasChild:true,url:'javascript:viod(0)',children:[{menuName:'公益合伙人',url:'#/'},{menuName:'合作机构',url:'#/'},{menuName:'合作企业',url:'#/'}]},
 		{menuName:'联系/加入我们',noChild:true,url:'#/contact'}
 	];
 	$scope.picList = [
 		{name:'乡村夏令营',url:'/images/zhixin.png'},
 	];
-    $scope.exportXlsx = exportFile.exportXlsx;
+    $scope.exportXlsx = appTool.exportXlsx;
 })
 
 app.config(['$routeProvider', function($routeProvider){
@@ -59,23 +63,21 @@ app.config(['$routeProvider', function($routeProvider){
         })
         .when('/news', {
             controller : 'newsCtl',		       
-            templateUrl:'/html/a.html'
+            templateUrl:'/html/news.html'
         })
         .when('/partner', {
             controller : 'partnerCtl',		       
-            templateUrl:'/html/a.html'
+            templateUrl:'/html/main.html'
         })
         .when('/contact', {
             controller : 'contactCtl',		       
-            templateUrl:'/html/a.html'
+            templateUrl:'/html/main.html'
         })
-        .otherwise({redirectTo:'/'});
+        .otherwise({redirectTo:'javascript:void(0)'});
 }]);
 
 
-app.controller('newsCtl', ['$scope', function($scope){
-    $scope.title = "news Page";
-}]);
+
 app.controller('partnerCtl', ['$scope', function($scope){
     $scope.title = "partner Page";
 }]);
