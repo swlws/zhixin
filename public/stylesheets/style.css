@@ -1,16 +1,24 @@
-/*body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}*/
-
-
 .text_center{
 	text-align: center ;
 }
+.font_01{
+	font-family: "MICROSOFT YaHei","Roboto",sans-serif;
+	font-size:14px;
+}
+.font_02{
+	font-family: "MICROSOFT YaHei","Roboto",sans-serif;
+	font-size:20px;
+}
+
+.font_03{
+	font-family: "MICROSOFT YaHei","Roboto",sans-serif;
+	font-size:16px;
+}
+
+.box_shadow:hover{
+	box-shadow: 0px 3px 10px 5px #CCC;
+}
+
 .title_background{
 	padding: 130px 0px;
 	background-image: url(/images/main/2.png);
@@ -19,13 +27,12 @@ a {
 	background-position: 0 -280px;
 }
 /*****************title*******************/
-.active_title{
+.active_title,.active_title_2{
 	font-weight: 300;
     font-size: 30px;
     line-height: 32px;
     color: #444;
     font-family: 'kaiti','MICROSOFT YaHei','Roboto Condensed', sans-serif;
-
 }
 .active_title::before,.active_title::after{
 	display: inline-block;

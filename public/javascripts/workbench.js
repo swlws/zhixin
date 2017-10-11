@@ -71,16 +71,12 @@ app.config(['$routeProvider', function($routeProvider){
         })
         .when('/contact', {
             controller : 'contactCtl',		       
-            templateUrl:'/html/main.html'
+            templateUrl:'/html/contact.html'
         })
         .otherwise({redirectTo:'javascript:void(0)'});
 }]);
 
-
-
 app.controller('partnerCtl', ['$scope', function($scope){
     $scope.title = "partner Page";
 }]);
-app.controller('contactCtl', ['$scope', function($scope){
-    $scope.title = "contact Page";
-}]);
+

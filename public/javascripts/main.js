@@ -1,6 +1,6 @@
 app.controller('mainCtl',  function($scope,$rootScope,appTool){
     appTool.toTop();
-	let docHeight = $(window).height();
+    let docHeight = screen.availHeight;
 	let workbench_header = $('#workbench_header').outerHeight(true);
 	$scope.headerBackground = {
 		url:'/images/main/2.png',
