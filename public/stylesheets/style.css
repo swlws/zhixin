@@ -15,6 +15,10 @@
 	font-size:16px;
 }
 
+.margin_top_50{
+	margin: 25px auto;
+}
+
 .box_shadow:hover{
 	box-shadow: 0px 3px 10px 5px #CCC;
 }

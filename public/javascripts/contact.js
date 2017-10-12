@@ -1,4 +1,5 @@
-app.controller('contactCtl', ['$scope', function($scope){
+app.controller('contactCtl', ['$scope','appTool', function($scope,appTool){
+	appTool.toTop();
     $scope.partners = [
     	{name:'耿向顺',pso:'织心创始人',url:'/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
     	{name:'耿向顺',pso:'织心创始人',url:'/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
