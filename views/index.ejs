@@ -2,14 +2,31 @@
 <html>
 <head>
 	<title><%= title %></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">  
 	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<style type="text/css">
+		span{
+			color:blue;
+		}
+	</style>
 </head>
 <body >
 	<h1><%= title %></h1>
-	<p>Welcome to <%= title %></p>
-	
+	<p><%= desc %></p>
 	<script type="text/javascript">
-		window.location.href="/html/workbench.html"
+		function isIE() {
+			var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
+			return userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器  
+		}
+		
+		if(isIE()){
+			var p = document.createElement('span');
+			var text = document.createTextNode('本站不兼容IE，请使用非IE浏览器！！');
+			p.appendChild(text);
+			document.body.appendChild(p);
+		}else{
+			window.location.href="/html/workbench.html"	
+		}
 	</script>
 </body>
 </html>

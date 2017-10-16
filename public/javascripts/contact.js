@@ -20,9 +20,9 @@ app.controller('contactCtl', ['$scope','appTool', function($scope,appTool){
     ];
 
     $scope.contact = [
-    	{name:'新浪微博',url:'/images/zhixin.png'},
-    	{name:'微信公众号',url:'/images/zhixin.png'},
-    	{name:'QQ群组',url:'/images/zhixin.png'},
+    	{type:'新浪微博',name:'言小莫是耿向顺',url:'/images/zhixin.png'},
+    	{type:'微信公众号',name:'XXXXXX',url:'/images/zhixin.png'},
+    	{type:'QQ群组',name:'XXXXXX',url:'/images/zhixin.png'},
     ]
 }]);
 
