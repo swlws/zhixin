@@ -4,15 +4,11 @@
 	<title><%= title %></title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">  
 	<link rel='stylesheet' href='/stylesheets/style.css' />
-	<style type="text/css">
-		span{
-			color:blue;
-		}
-	</style>
 </head>
 <body >
 	<h1><%= title %></h1>
 	<p><%= desc %></p>
+	<script type="text/javascript" src="/resource/jquery.js"></script>
 	<script type="text/javascript">
 		function isIE() {
 			var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
@@ -20,10 +16,7 @@
 		}
 		
 		if(isIE()){
-			var p = document.createElement('span');
-			var text = document.createTextNode('本站不兼容IE，请使用非IE浏览器！！');
-			p.appendChild(text);
-			document.body.appendChild(p);
+			$(document.body).append($('<span style="color:blue;">本站不兼容IE，请使用非IE浏览器！！</span>'));
 		}else{
 			window.location.href="/html/workbench.html"	
 		}
