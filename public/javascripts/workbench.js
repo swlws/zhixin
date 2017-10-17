@@ -59,19 +59,19 @@ app.config(['$routeProvider', function($routeProvider){
         $routeProvider
         .when('/', {
             controller : 'mainCtl',		       
-            templateUrl:'/html/main.html'
+            templateUrl:'/main'
         })
         .when('/news', {
             controller : 'newsCtl',		       
-            templateUrl:'/html/news.html'
+            templateUrl:'/news'
         })
         .when('/partner', {
             controller : 'partnerCtl',		       
-            templateUrl:'/html/main.html'
+            templateUrl:'/main'
         })
         .when('/contact', {
             controller : 'contactCtl',		       
-            templateUrl:'/html/contact.html'
+            templateUrl:'/contact'
         })
         .otherwise({redirectTo:'javascript:void(0)'});
 }]);

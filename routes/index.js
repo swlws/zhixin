@@ -3,7 +3,27 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: '织心-益起来' , desc : '四川织心志愿者高校联盟'});
+  res.render('index');
+});
+
+router.get('/notIE', function(req, res, next) {
+  res.render('notIE',{title:'浏览器不支持',desc:'本站不兼容IE，请使用非IE浏览器！！'});
+});
+
+router.get('/workbench', function(req, res, next) {
+  res.render('workbench');
+});
+
+router.get('/main', function(req, res, next) {
+  res.render('main');
+});
+
+router.get('/news', function(req, res, next) {
+  res.render('news');
+});
+
+router.get('/contact', function(req, res, next) {
+  res.render('contact');
 });
 
 module.exports = router;

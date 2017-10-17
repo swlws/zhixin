@@ -1,0 +1,83 @@
+<style type="text/css">
+	.table_title{
+		border-bottom: 1px solid #CCC;
+		font-weight: bolder;
+		padding-bottom: 5px;
+	}
+	.row_margin{
+		margin: 10px auto;
+		font-size: 16px;
+	}
+	.row_margin:hover{
+		background: #CCC;
+		border-radius: 5px;
+		box-shadow: 0px 1px 1px 1px #f1f1f1;
+		cursor: pointer;
+	}
+
+</style>
+
+<div class="container" style="width: 100%;margin-top:50px;padding: 0 0 50px;">
+	<h3 class="text_center title_background" style="background-image: url('/images/contact/back.png');">
+		<span class="active_title" style="color: white;">&nbsp关于我们&nbsp</span>
+	</h3>
+</div>
+
+<div class="container">
+	<div class="row">
+		<h3 class="text_center padding_title">
+			<span class="active_title_2">Team | 团队成员</span>
+		</h3>
+	</div>
+	<div class="row" style="text-align: center;">
+		<div class="col-md-2 col-sm-2 col-xs-2 " ng-repeat="p in partners">
+			<div class="thumbnail box_shadow">
+				<a ng-href="javascript:void(0)"><img ng-src="{{p.url}}" class="img-circle"/></a>
+				<div class="caption">
+					<h4 style="font-weight: bolder;">{{p.name}}</h4>
+					<h5 style="color: #CCC;">{{p.pos}}</h5>
+					<p class="font_01">{{p.desc}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container margin_top_50">
+	<div class="row">
+		<h3 class="text_center padding_title">
+			<span class="active_title_2">Team | 团队荣誉</span>
+		</h3>
+	</div>
+	<div class="row text_center table_title font_02">
+		<div class="col-md-1 col-sm-1 col-xs-1">#</div>
+		<div class="col-md-2 col-sm-2 col-xs-2">时间</div>
+		<div class="col-md-6 col-sm-6 col-xs-6">名称</div>
+		<div class="col-md-3 col-sm-3 col-xs-3">奖励</div>
+	</div>
+	<div class="row text_center row_margin" ng-repeat="h in honor">
+		<div class="col-md-1 col-sm-1 col-xs-1">{{$index + 1}}</div>
+		<div class="col-md-2 col-sm-2 col-xs-2">{{h.time}}</div>
+		<div class="col-md-6 col-sm-6 col-xs-6">{{h.name}}</div>
+		<div class="col-md-3 col-sm-3 col-xs-3" style="color: green;">{{h.reward}}</div>
+	</div>
+</div>
+
+<div class="container margin_top_50">
+	<div class="row">
+		<h3 class="text_center padding_title">
+			<span class="active_title_2">联系我们</span>
+		</h3>
+	</div>
+	<div class="row text_center">
+		<div class="col-md-4 col-sm-4 col-xs-4 " ng-repeat="con in contact">
+			<div class="thumbnail box_shadow">
+				<a ng-href="javascript:void(0)"><img ng-src="{{con.url}}" class="img-responsive"/></a>
+				<div class="caption">
+					<h2 style="font-weight: bolder;">{{con.type}}</h2>
+					<p class="font_02">{{con.name}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
