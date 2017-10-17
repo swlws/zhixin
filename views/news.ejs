@@ -29,11 +29,11 @@
 		transition-delay: 0s;
 	}
 </style>
-<div class="container" style="width: 100%;margin-top:50px;padding: 0 0 50px;;background: #272727;">
-	<h3 class="text_center title_background" style="background-image: url('/images/news/back.jpg')">
+<div class="container" style="width: 100%;margin-top:0px;padding: 0 0 50px;background: #272727;">
+	<h3 class="text_center title_background" style="background-image: url('/images/news/back.jpg');">
 		<span class="active_title" style="color: white;">&nbsp最新动态&nbsp</span>
 	</h3>
-	<div class="row">
+	<div class="row" style="margin-top:50px;">
 		<div class="col-md-3 col-sm-3 col-xs-3" ng-repeat="news in newsList" style="margin: 0px;padding: 0px;">
 			<div class="thumbnail box news_box">
 				<a ng-href="{{news.linkUrl}}"><img  ng-src="{{news.photoUrl}}" /></a>

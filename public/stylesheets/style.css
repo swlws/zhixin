@@ -24,6 +24,7 @@
 }
 
 .title_background{
+	margin-top: 0px;
 	padding: 130px 0px;
 	background-image: url(/images/main/2.png);
 	background-repeat: no-repeat;

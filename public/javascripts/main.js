@@ -1,10 +1,10 @@
 app.controller('mainCtl',  function($scope,$rootScope,appTool){
     appTool.toTop();
     let docHeight = screen.availHeight;
-	let workbench_header = $('#workbench_header').outerHeight(true);
+	let hei = $('#workbench_header').height();
 	$scope.headerBackground = {
 		url:'/images/main/2.png',
-		height:docHeight
+		height:docHeight - hei
 	}
     $scope.title = "main Page";	
     $scope.projectList = [

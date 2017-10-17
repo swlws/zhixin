@@ -36,6 +36,8 @@ app.service('appTool',function(){
 })
 
 app.controller('appCtl',($scope,appTool)=>{
+    let hei = $('#workbench_header').height();
+    $('#content').css('marginTop',hei+'px');
 	$scope.appMsg = {
 		title:'四川织心青少年发展中心',
 		logoUrl:'/images/logo.jpg',
