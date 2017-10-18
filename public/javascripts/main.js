@@ -4,9 +4,9 @@ app.controller('mainCtl',  function($scope,$rootScope,appTool){
 	let hei = $('#workbench_header').height();
 	$scope.headerBackground = {
 		url:'/images/main/2.png',
-		height:docHeight - hei
+		height:docHeight - hei - 60
 	}
-    $scope.title = "main Page";	
+    $scope.title = '四川织心青少年发展中心';
     $scope.projectList = [
     	{title:'乡村夏令营',linkUrl:'#/',photoUrl:'/images/main/1.png',desc:'乡村夏令营'},
     	{title:'乡村医疗',linkUrl:'#/',photoUrl:'/images/main/2.png',desc:'乡村医疗'},

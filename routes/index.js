@@ -26,4 +26,8 @@ router.get('/contact', function(req, res, next) {
   res.render('contact');
 });
 
+router.get('/camp', function(req, res, next) {
+  res.render('camp');
+});
+
 module.exports = router;

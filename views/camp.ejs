@@ -1,0 +1,54 @@
+<style>
+td{
+	width: 50%;
+	height: 300px;
+	vertical-align: middle;
+}
+td > img{
+	width: 90%;
+	height: 90%;
+	margin: 4%;
+	padding: 1%;
+	border:1px solid #CCC;
+	border-radius: 5px;
+}
+</style>
+
+<div class="container" style="width: 100%;padding: 0px;">
+	<img ng-src="{{headerBackground.url}}" style="width: 100%;height: {{headerBackground.height}}px;">
+	<div class="showTitle">
+		<span>{{camp.title}}</span>
+	</div>
+</div>
+
+<div class="container text_center">
+	<h3 class="summary_title padding_title">{{camp.title}}</h3>
+	<p class="summary_desc ">{{camp.desc}}</p>
+</div>
+
+<div class="container">
+	<h3 class="text_center padding_title">
+		<span class="active_title ">&nbsp精彩瞬间&nbsp</span>
+	</h3>
+	<div class="row">
+		<table>
+			<tr>
+				<td>
+					志愿者们在活动中为孩子提供心理疏导，让孩子阳光、快乐。在一堂名叫“画出我的梦想”的美术课上，让孩子们绘画自己的理想，签字画押，然后保存着留给未来看，并鼓励他们促进孩子对自己未来充满希望。
+				</td>
+				<td>
+					<img src="/images/camp/6.jpg">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<img src="/images/camp/10.jpg">
+				</td>
+				<td>
+					织心志愿者们与百度公司合作，在乡村中普及VR体验教育，让互联网+乡村教育，为乡村教育注入活力，当孩子们带上VR眼镜，观看立体空间的博物馆，兴奋得纷纷大声呼喊尖叫。
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
