@@ -30,4 +30,8 @@ router.get('/camp', function(req, res, next) {
   res.render('camp');
 });
 
+router.get('/doctor', function(req, res, next) {
+  res.render('doctor');
+});
+
 module.exports = router;

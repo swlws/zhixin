@@ -46,7 +46,7 @@ app.controller('appCtl',($scope,appTool)=>{
 	
 	$scope.menuList = [			
 		{menuName:'首页',noChild:true,url:'#/'},
-		{menuName:'机构项目',hasChild:true,url:'javascript:viod(0)',children:[{menuName:'织心*乡村夏令营',url:'#/camp'},{menuName:'织心*乡村医疗',url:'#/'},{menuName:'织心*乡村创客',url:'#/'},{menuName:'织心*暖冬行动',url:'#/'},{menuName:'织心*留住童年',url:'#/'}]},
+		{menuName:'机构项目',hasChild:true,url:'javascript:viod(0)',children:[{menuName:'织心*乡村夏令营',url:'#/camp'},{menuName:'织心*乡村医疗',url:'#/doctor'},{menuName:'织心*乡村创客',url:'#/'},{menuName:'织心*暖冬行动',url:'#/'},{menuName:'织心*留住童年',url:'#/'}]},
 		{menuName:'最新动态',noChild:true,url:'#/news'},
 		{menuName:'合作伙伴',hasChild:true,url:'javascript:viod(0)',children:[{menuName:'公益合伙人',url:'#/'},{menuName:'合作机构',url:'#/'},{menuName:'合作企业',url:'#/'}]},
 		{menuName:'联系/加入我们',noChild:true,url:'#/contact'}
@@ -78,6 +78,10 @@ app.config(['$routeProvider', function($routeProvider){
         .when('/camp', {
             controller : 'campCtl',             
             templateUrl:'/camp'
+        })
+        .when('/doctor', {
+            controller : 'doctorCtl',             
+            templateUrl:'/doctor'
         })
         .otherwise({redirectTo:'javascript:void(0)'});
 }]);

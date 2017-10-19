@@ -1,0 +1,81 @@
+<head>
+	<title>乡村医疗</title>
+	<style type="text/css">
+		.pImg{
+			width: 100%;
+			height: 400px;
+			text-align: center;
+		}
+		.pImg img{
+			width: 80%;
+			height: 100%;
+			border:1px solid #CCC;
+			padding: 3px;
+		}
+		table{
+			width: 80%;
+			border:1px solid #CCC;
+			margin: 0 auto;
+		}
+		tr,td,th{
+			border:1px solid #CCC;	
+			text-align: center;
+			text-indent: 0px;
+			padding: 5px 0;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container" style="width: 100%;padding: 0px;">
+		<img ng-src="{{headerBackground.url}}" style="width: 100%;height: {{headerBackground.height}}px;">
+		<div class="showTitle">
+			<span>{{doctor.title}}</span>
+			<div class="arrow"></div>
+		</div>
+	</div>
+	<div class="container text_center">
+		<h3 class="summary_title padding_title">{{doctor.title}}</h3>
+		<p class="summary_desc">{{doctor.desc}}</p>
+	</div>
+
+	<div class="container">
+		<h3 class="text_center padding_title">
+			<span class="active_title ">&nbsp{{design.title}}&nbsp</span>
+		</h3>
+		<div class="row">
+			<div class="col-md-12">
+				<p>{{design.descs[0]}}</p>
+				<p>{{design.descs[1]}}</p>
+				<p class="pImg"><img ng-src="{{design.imgUrl}}"></p>
+				<p>{{design.descs[2]}}</p>
+				<p>{{design.descs[3]}}</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" style="padding-bottom: 50px;">
+		<h3 class="text_center padding_title">
+			<span class="active_title ">&nbsp{{train.title}}&nbsp</span>
+		</h3>
+		<div class="row">
+			<p ng-repeat="desc in train.descs">{{desc}}</p>
+		</div>
+		<div class="row">
+			<table>
+				<tr>
+					<th style="width: 10%;">时间</th>
+					<th style="width: 30%;">地点</th>
+					<th style="width: 30%;">事项</th>
+					<th style="width: 30%;">事项内容</th>
+				</tr>
+				<tr ng-repeat="plain in train.plains">
+					<td>{{plain.time}}</td>
+					<td>{{plain.add}}</td>
+					<td>{{plain.content}}</td>
+					<td>{{plain.desc}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
