@@ -27,9 +27,7 @@
 }
 
 /*****************animation --- arrow show*******************/
-*{
-	text-indent: 2em;
-}
+
 .arrow{
 	position: relative;
 	display: block;
