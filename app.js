@@ -2,7 +2,8 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var morgan = require('morgan');
-var logConfig = require('./config/log.js');
+var logConfig = require('./util/MorganLog.js');
+var logger = require('./util/BunyanLog.js').GetLogger();
 
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -25,6 +26,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+logger.info('app start')
+
 app.use('/', index);
 app.use('/users', users);
 
@@ -32,6 +35,7 @@ app.use('/users', users);
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
+  logger.error(err);
   next(err);
 });
 
@@ -43,6 +47,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
+  logger.error(err);
   res.render('error');
 });
 

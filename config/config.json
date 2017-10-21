@@ -1,3 +1,10 @@
 {
-	"morgan_enabled":true
+	"log":{
+		"morgan":{
+			"enabled":true
+		},
+		"bunyan":{
+			"level":"info"
+		}
+	}
 }

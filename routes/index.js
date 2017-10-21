@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var logger = require('./../util/BunyanLog.js').GetLogger();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -11,6 +12,7 @@ router.get('/notIE', function(req, res, next) {
 });
 
 router.get('/workbench', function(req, res, next) {
+	logger.info('workbench')
   res.render('workbench');
 });
 

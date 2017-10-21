@@ -1,7 +1,8 @@
 var path = require('path');
 var fs = require('fs');
+var tool = require('./Tool.js');
 var rfs = require('rotating-file-stream');
-var config = require('./config.json');
+var config = require(path.join(__dirname,'..','config','config.json')).log.morgan;
 
 let format = function(tokens , req , res){
 	return [
@@ -19,18 +20,18 @@ let format = function(tokens , req , res){
 }
 
 let getStream = function(){
-	var logDirectory = path.join(__dirname, '..','Log');
-	fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+	var logDirectory = path.join(__dirname,'..','..','work','log');
+	tool.mkdir(logDirectory);
 	return rfs('http.log', {
 		interval: '1d', // rotate daily
 		path: logDirectory
 	});
-	// return fs.createWriteStream(path.join(__dirname, '..','Log','http.log'), {flags: 'a',encodeing:'utf-8'});
+	// return fs.createWriteStream(path.join(__dirname,'log','http.log'), {flags: 'a',encodeing:'utf-8'});
 }
 
 module.exports = {
 	format:format,
 	options:{
-		stream: config.morgan_enabled ? getStream() : process.stdout
+		stream: config.enabled ? getStream() : process.stdout
 	}
 }
