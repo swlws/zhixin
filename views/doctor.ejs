@@ -24,6 +24,36 @@
 			padding: 5px 0;
 			font-size: 16px;
 		}
+
+		.bookBox{
+			width: 900px;
+			height: 800px;
+			position: relative;
+			background: #339999;
+		}
+		.bookBox > div{			
+			position: absolute;
+			top:5%;
+			left: 50%;
+			border:1px solid #CCC;
+			width: 40%;
+			height: 90%;
+			transition: all 2s;
+			transform: rotateX(40deg);
+			transform-origin: 0px 0px;
+			transform-style: preserve-3d;
+			background: white;
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+		/*.bookBox > div:hover{
+			transform: rotateX(40deg) rotateY(180deg);
+		}*/
+		.bookBox p{
+			font-size: 20px;
+			text-align: center;
+			
+		}
 	</style>
 </head>
 <body>
@@ -36,7 +66,7 @@
 	</div>
 	<div class="container text_center">
 		<h3 class="summary_title padding_title">{{doctor.title}}</h3>
-		<p class="summary_desc">{{doctor.desc}}</p>
+		<p class="summary_desc text_index_2">{{doctor.desc}}</p>
 	</div>
 
 	<div class="container">
@@ -45,21 +75,21 @@
 		</h3>
 		<div class="row">
 			<div class="col-md-12">
-				<p>{{design.descs[0]}}</p>
-				<p>{{design.descs[1]}}</p>
+				<p class="text_index_2">{{design.descs[0]}}</p>
+				<p class="text_index_2">{{design.descs[1]}}</p>
 				<p class="pImg"><img ng-src="{{design.imgUrl}}"></p>
-				<p>{{design.descs[2]}}</p>
-				<p>{{design.descs[3]}}</p>
+				<p class="text_index_2">{{design.descs[2]}}</p>
+				<p class="text_index_2">{{design.descs[3]}}</p>
 			</div>
 		</div>
 	</div>
 
-	<div class="container" style="padding-bottom: 50px;">
+	<div class="container">
 		<h3 class="text_center padding_title">
 			<span class="active_title ">&nbsp{{train.title}}&nbsp</span>
 		</h3>
 		<div class="row">
-			<p ng-repeat="desc in train.descs">{{desc}}</p>
+			<p ng-repeat="desc in train.descs" class="text_index_2">{{desc}}</p>
 		</div>
 		<div class="row">
 			<table>
@@ -76,6 +106,46 @@
 					<td>{{plain.desc}}</td>
 				</tr>
 			</table>
+		</div>
+	</div>
+
+	<div class="container">
+		<h3 class="text_center padding_title">
+			<span class="active_title">&nbsp{{raise.title}}&nbsp</span>
+		</h3>
+		<div class="row">
+			<p ng-repeat="desc in raise.descs" class="text_index_2">{{desc}}</p>
+		</div>
+		<div class="row">
+			<table>
+				<tr>
+					<th style="width: 10%;">#</th>
+					<th style="width: 40%;">物品</th>
+					<th style="width: 20%;">单位及总需</th>
+					<th style="width: 10%;">数量</th>
+					<th style="width: 10%;">单价</th>
+					<th style="width: 10%;">小计</th>
+				</tr>
+				<tr ng-repeat="plain in raise.plains">
+					<td>{{$index}}</td>
+					<td>{{plain.thing}}</td>
+					<td>{{plain.unit}}</td>
+					<td>{{plain.count}}</td>
+					<td>{{plain.price}}</td>
+					<td>{{plain.money}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="container">
+		<h3 class="text_center padding_title">
+			<span class="active_title">&nbsp{{action.title}}&nbsp</span>
+		</h3>
+		<div class="row bookBox">
+			<!-- <div><h3>END</h3></div> -->
+			<div ng-repeat="act in action.acts" ng-click="action.doPage(act)" data-act="{{act}}">{{act}}</div>
+			<!-- <div><h3>随行笔记</h3></div> -->
 		</div>
 	</div>
 </body>

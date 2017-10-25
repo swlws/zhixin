@@ -39,4 +39,35 @@ app.controller('doctorCtl', function($scope,$rootScope,appTool){
 			{time:'5月5日',add:'川北医学院图书信息大楼406',content:'医学人文素质培训',desc:'义诊操守；禁忌和要求'},
 		]
 	}
+
+	$scope.raise = {
+		title:'资金筹集和物资采购',
+		descs:[
+			'作为“织心志愿者”所有项目中最花钱的医疗板块项目，我们尽可能节省开支，根据项目实际需求进行资金精确预算，采用“能租借就租借、能不买就不买”的原则进行物资采购。',
+			'很幸运，我们获得了“走向西部”的支持，总共为我们“织心志愿者”医疗服务专项资助了资金7000元。',
+		],
+		plains:[
+			{thing:'医用口罩',unit:'袋（100）',count:20,price:10,money:200},
+			{thing:'医用口罩',unit:'袋（100）',count:20,price:10,money:200},
+			{thing:'医用口罩',unit:'袋（100）',count:20,price:10,money:200},
+			{thing:'医用口罩',unit:'袋（100）',count:20,price:10,money:200},
+			{thing:'医用口罩',unit:'袋（100）',count:20,price:10,money:200},
+			{thing:'医用口罩',unit:'袋（100）',count:20,price:10,money:200},
+			{thing:'医用口罩',unit:'袋（100）',count:20,price:10,money:200},
+			{thing:'医用口罩',unit:'袋（100）',count:20,price:10,money:200},
+		]
+	}
+
+	$scope.action = {
+		title:'服务项目',
+		acts:['基础板块义诊','特色义诊','卫生理论'],
+		doPage:function(that){
+			let eleFlag = '[data-act="'+that+'"]';		
+			$(eleFlag).css('transform','rotateX(40deg) rotateY(180deg)');		
+		}
+	}
+
+	$scope.doS = that => {
+		alert(that)
+	}
 })
