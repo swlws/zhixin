@@ -26,33 +26,69 @@
 		}
 
 		.bookBox{
-			width: 900px;
-			height: 800px;
-			position: relative;
-			background: #339999;
+			height: 720px;
+			position: relative;		
+			left: -20%;	
 		}
 		.bookBox > div{			
 			position: absolute;
 			top:5%;
-			left: 50%;
-			border:1px solid #CCC;
+			left: 50%;			
 			width: 40%;
-			height: 90%;
-			transition: all 2s;
+			height:120%;
+			transition: all 2s ease;
 			transform: rotateX(40deg);
 			transform-origin: 0px 0px;
 			transform-style: preserve-3d;
 			background: white;
 			border-top-right-radius: 10px;
 			border-bottom-right-radius: 10px;
+			background: url('/images/pageback.jpg') repeat;
+			border-left:5px solid #CCC;
+			box-shadow: 5px 5px 5px 3px #CCC;
+			overflow: hidden;
 		}
-		/*.bookBox > div:hover{
-			transform: rotateX(40deg) rotateY(180deg);
-		}*/
-		.bookBox p{
-			font-size: 20px;
+		.bookBox > div:before{
+			content: " ";
+			position: absolute;
+			bottom:-1px;
+			border: 1px solid #CCC;
+			width: 100%;
+		}
+		.bookBox > div:after{
+			content: " ";
+			position: absolute;
+			bottom:-5px;
+			border: 1px solid #CCC;
+			width: 100%;
+		}
+
+		.bookBox .img_desc{
+			width: 100%;
+			height: 100%;
+		}
+		.bookBox .img_desc h3{
+			width: 100%;
 			text-align: center;
-			
+			padding: 10% 0 10%;
+		}
+		.bookBox .img_desc .imgBox{
+			width: 100%;
+			height: 30%;
+			text-align: center;
+			margin-top: 10%;
+		}
+		.bookBox .img_desc img{
+			width: 80%;
+			height: 100%;
+			padding: 10px;
+			border:1px solid #FFD700;
+			border-radius: 5px;
+		}
+		.bookBox .img_desc .desc{
+			font-size: 1.2em;
+			font-family: 'songti';
+			padding: 10% 10px 0;
 		}
 	</style>
 </head>
@@ -75,11 +111,11 @@
 		</h3>
 		<div class="row">
 			<div class="col-md-12">
-				<p class="text_index_2">{{design.descs[0]}}</p>
-				<p class="text_index_2">{{design.descs[1]}}</p>
+				<p class="text_index_2 summary_desc">{{design.descs[0]}}</p>
+				<p class="text_index_2 summary_desc">{{design.descs[1]}}</p>
 				<p class="pImg"><img ng-src="{{design.imgUrl}}"></p>
-				<p class="text_index_2">{{design.descs[2]}}</p>
-				<p class="text_index_2">{{design.descs[3]}}</p>
+				<p class="text_index_2 summary_desc">{{design.descs[2]}}</p>
+				<p class="text_index_2 summary_desc">{{design.descs[3]}}</p>
 			</div>
 		</div>
 	</div>
@@ -89,7 +125,7 @@
 			<span class="active_title ">&nbsp{{train.title}}&nbsp</span>
 		</h3>
 		<div class="row">
-			<p ng-repeat="desc in train.descs" class="text_index_2">{{desc}}</p>
+			<p ng-repeat="desc in train.descs" class="summary_desc text_index_2">{{desc}}</p>
 		</div>
 		<div class="row">
 			<table>
@@ -114,7 +150,7 @@
 			<span class="active_title">&nbsp{{raise.title}}&nbsp</span>
 		</h3>
 		<div class="row">
-			<p ng-repeat="desc in raise.descs" class="text_index_2">{{desc}}</p>
+			<p ng-repeat="desc in raise.descs" class="summary_desc text_index_2">{{desc}}</p>
 		</div>
 		<div class="row">
 			<table>
@@ -143,9 +179,26 @@
 			<span class="active_title">&nbsp{{action.title}}&nbsp</span>
 		</h3>
 		<div class="row bookBox">
-			<!-- <div><h3>END</h3></div> -->
-			<div ng-repeat="act in action.acts" ng-click="action.doPage(act)" data-act="{{act}}">{{act}}</div>
-			<!-- <div><h3>随行笔记</h3></div> -->
+			<div ng-repeat="act in action.acts" ng-click="action.doPage(act.name)" data-act="{{act.name}}" style="z-index:{{act['zIndex']}};">			
+				<div class="img_desc">									
+					<h3>{{act.name}}</h3>	
+					<div class="imgBox">
+						<img ng-src="{{act.url}}" />
+					</div>	
+					<p class="desc text_index_2">
+						{{act.desc}}
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<h3 class="text_center padding_title">
+			<span class="active_title ">&nbsp{{endData.title}}&nbsp</span>
+		</h3>
+		<div class="row">
+			<p class="summary_desc text_index_2">{{endData.desc}}</p>
 		</div>
 	</div>
 </body>
