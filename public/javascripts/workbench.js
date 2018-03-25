@@ -2,7 +2,7 @@ let app = angular.module('app',['ngRoute']);
 
 app.service('appTool',function(){
     this.exportXlsx = function(url){
-        var url = url || '/1.xls';
+        var url = url || '/zhixin/1.xls';
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);        // 也可以使用POST方式，根据接口
         xhr.responseType = "blob";    // 返回类型blob
@@ -52,7 +52,7 @@ app.controller('appCtl',($scope,appTool)=>{
     $('#content').css('marginTop',hei+'px');
 	$scope.appMsg = {
 		title:'四川织心青少年发展中心',
-		logoUrl:'/images/logo.jpg',
+		logoUrl:'/zhixin/images/logo.jpg',
 		summary:'原名“四川织心志愿者高校联盟”，简称“织心志愿者”，成立于2013年，于2017年初注册成为一家以乡村青少年、乡村中老年人、青年大学生为服务主体的公益机构，总部位于四川省绵阳西南科技大学，品牌项目#四川织心乡村支教夏令营#，自成立以来，服务4000多名山区儿童，服务上万群众，成员500多人，获得9次国家级表彰。宗旨为“促进社会创新、促进社会公平、促进乡村发展、促进青少年成长与发展“，口号为”织结情谊，心合你我。'
 	};
 	
@@ -64,7 +64,7 @@ app.controller('appCtl',($scope,appTool)=>{
 		{menuName:'联系/加入我们',noChild:true,url:'#/contact'}
 	];
 	$scope.picList = [
-		{name:'乡村夏令营',url:'/images/zhixin.png'},
+		{name:'乡村夏令营',url:'/zhixin/images/zhixin.png'},
 	];
     $scope.exportXlsx = appTool.exportXlsx;
 })
@@ -74,27 +74,27 @@ app.config(['$routeProvider', function($routeProvider){
         $routeProvider
         .when('/', {
             controller : 'mainCtl',		       
-            templateUrl:'/main'
+            templateUrl:'/zhixin/main'
         })
         .when('/news', {
             controller : 'newsCtl',		       
-            templateUrl:'/news'
+            templateUrl:'/zhixin/news'
         })
         .when('/partner', {
             controller : 'partnerCtl',		       
-            templateUrl:'/main'
+            templateUrl:'/zhixin/main'
         })
         .when('/contact', {
             controller : 'contactCtl',		       
-            templateUrl:'/contact'
+            templateUrl:'/zhixin/contact'
         })
         .when('/camp', {
             controller : 'campCtl',             
-            templateUrl:'/camp'
+            templateUrl:'/zhixin/camp'
         })
         .when('/doctor', {
             controller : 'doctorCtl',             
-            templateUrl:'/doctor'
+            templateUrl:'/zhixin/doctor'
         })
         .otherwise({redirectTo:'javascript:void(0)'});
 }]);
@@ -107,31 +107,31 @@ app.controller('mainCtl',  function($scope,$rootScope,appTool){
     let docHeight = screen.availHeight;
     let hei = $('#workbench_header').height();
     $scope.headerBackground = {
-        url:'/images/main/2.png',
+        url:'/zhixin/images/main/2.png',
         height:docHeight - hei - 60
     }
     $scope.title = '四川织心青少年发展中心';
     $scope.projectList = [
-        {title:'乡村夏令营',linkUrl:'#/',photoUrl:'/images/main/1.png',desc:'乡村夏令营'},
-        {title:'乡村医疗',linkUrl:'#/',photoUrl:'/images/main/2.png',desc:'乡村医疗'},
-        {title:'乡村创客',linkUrl:'#/',photoUrl:'/images/main/3.jpg',desc:'乡村创客'},
-        {title:'暖冬行动',linkUrl:'#/',photoUrl:'/images/main/4.png',desc:'暖冬行动'}
+        {title:'乡村夏令营',linkUrl:'#/',photoUrl:'/zhixin/images/main/1.png',desc:'乡村夏令营'},
+        {title:'乡村医疗',linkUrl:'#/',photoUrl:'/zhixin/images/main/2.png',desc:'乡村医疗'},
+        {title:'乡村创客',linkUrl:'#/',photoUrl:'/zhixin/images/main/3.jpg',desc:'乡村创客'},
+        {title:'暖冬行动',linkUrl:'#/',photoUrl:'/zhixin/images/main/4.png',desc:'暖冬行动'}
     ];
     $scope.newsList = [
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/1.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/2.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/3.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/4.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/5.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/6.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/7.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/8.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/9.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/1.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/2.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/3.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/4.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/5.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/6.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/7.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/8.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/9.jpg'},
     ];
     $scope.partnerList = [
-        {title:'公益合伙人',photoUrl:'/images/main/1.png'},
-        {title:'合作机构',photoUrl:'/images/main/2.png'},
-        {title:'合作企业',photoUrl:'/images/main/3.jpg'}
+        {title:'公益合伙人',photoUrl:'/zhixin/images/main/1.png'},
+        {title:'合作机构',photoUrl:'/zhixin/images/main/2.png'},
+        {title:'合作企业',photoUrl:'/zhixin/images/main/3.jpg'}
     ];
 });
 
@@ -141,18 +141,18 @@ app.controller('mainCtl',  function($scope,$rootScope,appTool){
 app.controller('newsCtl', function($scope,appTool){
     appTool.toTop();
     $scope.headerBackground = {
-        url:'/images/news/back.jpg'
+        url:'/zhixin/images/news/back.jpg'
     }
     $scope.newsList = [
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/1.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/2.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/3.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/4.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/5.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/6.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/7.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/8.jpg'},
-        {title:'最新动态',linkUrl:'#/',photoUrl:'/images/news/9.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/1.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/2.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/3.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/4.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/5.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/6.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/7.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/8.jpg'},
+        {title:'最新动态',linkUrl:'#/',photoUrl:'/zhixin/images/news/9.jpg'},
     ];
 });
 
@@ -166,14 +166,14 @@ app.controller('partnerCtl', ['$scope', function($scope){
 app.controller('contactCtl', ['$scope','appTool', function($scope,appTool){
     appTool.toTop();
     $scope.partners = [
-        {name:'耿向顺',pso:'织心创始人',url:'/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
-        {name:'耿向顺',pso:'织心创始人',url:'/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
-        {name:'耿向顺',pso:'织心创始人',url:'/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
-        {name:'耿向顺',pso:'织心创始人',url:'/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
-        {name:'耿向顺',pso:'织心创始人',url:'/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
-        {name:'耿向顺',pso:'织心创始人',url:'/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
-        {name:'耿向顺',pso:'织心创始人',url:'/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
-        {name:'耿向顺',pso:'织心创始人',url:'/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
+        {name:'耿向顺',pso:'织心创始人',url:'/zhixin/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
+        {name:'耿向顺',pso:'织心创始人',url:'/zhixin/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
+        {name:'耿向顺',pso:'织心创始人',url:'/zhixin/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
+        {name:'耿向顺',pso:'织心创始人',url:'/zhixin/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
+        {name:'耿向顺',pso:'织心创始人',url:'/zhixin/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
+        {name:'耿向顺',pso:'织心创始人',url:'/zhixin/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
+        {name:'耿向顺',pso:'织心创始人',url:'/zhixin/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
+        {name:'耿向顺',pso:'织心创始人',url:'/zhixin/images/contact/user.jpg',desc:'让青年走近乡村，认识乡村，发展乡村，改变乡村。'},
     ];
 
     $scope.honor = [
@@ -185,9 +185,9 @@ app.controller('contactCtl', ['$scope','appTool', function($scope,appTool){
     ];
 
     $scope.contact = [
-        {type:'新浪微博',name:'言小莫是耿向顺',url:'/images/zhixin.png'},
-        {type:'微信公众号',name:'XXXXXX',url:'/images/zhixin.png'},
-        {type:'QQ群组',name:'XXXXXX',url:'/images/zhixin.png'},
+        {type:'新浪微博',name:'言小莫是耿向顺',url:'/zhixin/images/zhixin.png'},
+        {type:'微信公众号',name:'XXXXXX',url:'/zhixin/images/zhixin.png'},
+        {type:'QQ群组',name:'XXXXXX',url:'/zhixin/images/zhixin.png'},
     ]
 }]);
 
@@ -200,7 +200,7 @@ app.controller('campCtl', function($scope,$rootScope,appTool){
     let hei = $('#workbench_header').height();
     
     $scope.headerBackground = {
-        url:'/images/camp/11.jpg',
+        url:'/zhixin/images/camp/11.jpg',
         height:docHeight - hei - 60
     }
     //标题、描述
@@ -210,10 +210,10 @@ app.controller('campCtl', function($scope,$rootScope,appTool){
     }
     //活动
     $scope.actions = [
-        {imgUrl:'/images/camp/6.jpg',desc:'志愿者们在活动中为孩子提供心理疏导，让孩子阳光、快乐。在一堂名叫“画出我的梦想”的美术课上，让孩子们绘画自己的理想，签字画押，然后保存着留给未来看，并鼓励他们促进孩子对自己未来充满希望。'},
-        {imgUrl:'/images/camp/10.jpg',desc:'织心志愿者们与百度公司合作，在乡村中普及VR体验教育，让互联网+乡村教育，为乡村教育注入活力，当孩子们带上VR眼镜，观看立体空间的博物馆，兴奋得纷纷大声呼喊尖叫。'},
-        {imgUrl:'/images/camp/6.jpg',desc:'志愿者们在活动中为孩子提供心理疏导，让孩子阳光、快乐。在一堂名叫“画出我的梦想”的美术课上，让孩子们绘画自己的理想，签字画押，然后保存着留给未来看，并鼓励他们促进孩子对自己未来充满希望。'},
-        {imgUrl:'/images/camp/10.jpg',desc:'织心志愿者们与百度公司合作，在乡村中普及VR体验教育，让互联网+乡村教育，为乡村教育注入活力，当孩子们带上VR眼镜，观看立体空间的博物馆，兴奋得纷纷大声呼喊尖叫。'},
+        {imgUrl:'/zhixin/images/camp/6.jpg',desc:'志愿者们在活动中为孩子提供心理疏导，让孩子阳光、快乐。在一堂名叫“画出我的梦想”的美术课上，让孩子们绘画自己的理想，签字画押，然后保存着留给未来看，并鼓励他们促进孩子对自己未来充满希望。'},
+        {imgUrl:'/zhixin/images/camp/10.jpg',desc:'织心志愿者们与百度公司合作，在乡村中普及VR体验教育，让互联网+乡村教育，为乡村教育注入活力，当孩子们带上VR眼镜，观看立体空间的博物馆，兴奋得纷纷大声呼喊尖叫。'},
+        {imgUrl:'/zhixin/images/camp/6.jpg',desc:'志愿者们在活动中为孩子提供心理疏导，让孩子阳光、快乐。在一堂名叫“画出我的梦想”的美术课上，让孩子们绘画自己的理想，签字画押，然后保存着留给未来看，并鼓励他们促进孩子对自己未来充满希望。'},
+        {imgUrl:'/zhixin/images/camp/10.jpg',desc:'织心志愿者们与百度公司合作，在乡村中普及VR体验教育，让互联网+乡村教育，为乡村教育注入活力，当孩子们带上VR眼镜，观看立体空间的博物馆，兴奋得纷纷大声呼喊尖叫。'},
     ]
     //总结
     $scope.summary = `2017年#四川织心乡村支教夏令营#项目，为项目直接或间接捐赠近10万元物资，共有全省范围内近3000名农村儿童、近20000多名农村居民受益受到影响，总耗资二十万元，受到3000多人出资支持。项目被社会各界高度肯定，受到项目地群众热烈欢迎，百姓自发拉横幅迎接志愿者们。
@@ -229,7 +229,7 @@ app.controller('doctorCtl', function($scope,$rootScope,$timeout,appTool){
     let hei = $('#workbench_header').height();
     
     $scope.headerBackground = {
-        url:'/images/doctor/back.jpg',
+        url:'/zhixin/images/doctor/back.jpg',
         height:docHeight - hei - 60
     }
 
@@ -240,7 +240,7 @@ app.controller('doctorCtl', function($scope,$rootScope,$timeout,appTool){
     
     $scope.design = {
         title:'项目设计',
-        imgUrl:'/images/doctor/1.jpg',
+        imgUrl:'/zhixin/images/doctor/1.jpg',
         descs:[
             '我记得老耿给我们做培训的时候说：“我们要做某个公益项目，就必须看别人是否对我们的服务有需求，再根据需求去做方案。”因此在活动开始规划前，我开始对项目地进行调研。我们的项目地落户在四川多个地方，因此每个地方的情况也不同，我就以泸州项目点为案例。在我们调研的过程中，我们发现我们项目地居民卫生意识较差、儿童卫生习惯较差、基础医疗设施少、项目地甲肝多发和寄生虫病多发区域，另外儿童的身体发育状况也有营养偏低与不均衡特点，但当地的资源无法为其提供长期且频繁的卫生宣传，使上述问题成为固定性社会难题。',
             '于是我们针对我们发现的问题，设计解决方案：以儿童、老人和妇女为重点服务对象，针对儿童与成年居民开展高特色、多板块高质量义诊，从基础义诊和特色板块两方面覆盖血压、血糖、口腔、眼视光等众多项目；成年人群开展急救CPR步骤、包扎知识、夏季传染病知识宣传；儿童高危意外伤害事故防护知识教育、寄生虫传染知识宣传、包扎知识宣传、夏季溺水级其他意外伤害急救知识宣传、CPR急救步骤宣讲；卫生视频公映宣讲。',
@@ -285,10 +285,10 @@ app.controller('doctorCtl', function($scope,$rootScope,$timeout,appTool){
     $scope.action = (()=>{
         let title = '服务项目';
         let data = [
-            {name:'记录册',url:'/images/doctor/1.jpg',desc:''},
-            {name:'基础板块义诊',url:'/images/doctor/2.jpg',desc:'血压、血糖升高体重测量和评估，提供日常预防建议。'},
-            {name:'特色义诊',url:'/images/doctor/3.jpg',desc:'口腔检查，视力检测。'},
-            {name:'卫生理论',url:'/images/doctor/4.jpg',desc:'宣传夏日中暑、意外灾害急救知识、寄生虫传染知识等10种卫生理论，帮助居民建立良好的卫生习惯。'},
+            {name:'记录册',url:'/zhixin/images/doctor/1.jpg',desc:''},
+            {name:'基础板块义诊',url:'/zhixin/images/doctor/2.jpg',desc:'血压、血糖升高体重测量和评估，提供日常预防建议。'},
+            {name:'特色义诊',url:'/zhixin/images/doctor/3.jpg',desc:'口腔检查，视力检测。'},
+            {name:'卫生理论',url:'/zhixin/images/doctor/4.jpg',desc:'宣传夏日中暑、意外灾害急救知识、寄生虫传染知识等10种卫生理论，帮助居民建立良好的卫生习惯。'},
         ];
         let acts = appTool.formatToBookData(data);
         console.log(acts)

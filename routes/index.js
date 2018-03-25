@@ -13,7 +13,7 @@ router.get('/notIE', function(req, res, next) {
 
 router.get('/workbench', function(req, res, next) {
 	logger.info('workbench')
-  res.render('workbench');
+	res.render('workbench');
 });
 
 router.get('/main', function(req, res, next) {

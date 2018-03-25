@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-process.env.port = 80;
+process.env.port = 8080;
 var app = express();
 
 // view engine setup
@@ -19,17 +19,17 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(morgan(logConfig.format,logConfig.options));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/zhixin',favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use('/zhixin',morgan(logConfig.format,logConfig.options));
+app.use('/zhixin',bodyParser.json());
+app.use('/zhixin',bodyParser.urlencoded({ extended: false }));
+app.use('/zhixin',cookieParser());
+app.use('/zhixin',express.static(path.join(__dirname, 'public')));
 
 logger.info('app start')
 
-app.use('/', index);
-app.use('/users', users);
+app.use('/zhixin', index);
+app.use('/zhixin/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
